@@ -23,7 +23,7 @@ to do much on their own. More than likely one is to only be concerned with the
 Example:
 
 ```js
-const amphtmlValidatorRules = require('..');
+const amphtmlValidatorRules = require('amphtml-validator-rules');
 
 const { tags } = amphtmlValidatorRules.amp.validator.createRules();
 
