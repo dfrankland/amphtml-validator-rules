@@ -1,0 +1,30 @@
+{
+  "name": "amphtml-validator-rules",
+  "description": "Get all the rules that the `amphtml-validator` uses.",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "docker-compose up --build",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dfrankland/amphtml-validator-rules.git"
+  },
+  "keywords": [
+    "amphtml",
+    "amp",
+    "html",
+    "validator",
+    "rules"
+  ],
+  "author": "Dylan Frankland",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dfrankland/amphtml-validator-rules/issues"
+  },
+  "homepage": "https://github.com/dfrankland/amphtml-validator-rules#readme",
+  "devDependencies": {
+    "jest": "^22.0.4"
+  }
+}

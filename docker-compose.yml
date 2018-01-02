@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  jessie:
+    build: .
+    volumes:
+      - ./dist:/build/amphtml/validator/dist-remote
