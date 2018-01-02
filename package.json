@@ -3,6 +3,9 @@
   "description": "Get all the rules that the `amphtml-validator` uses.",
   "version": "1.0.0",
   "main": "./dist/index.js",
+  "files": [
+    "dist/index.js"
+  ],
   "scripts": {
     "build": "docker-compose up --build",
     "test": "jest"
@@ -24,6 +27,7 @@
     "url": "https://github.com/dfrankland/amphtml-validator-rules/issues"
   },
   "homepage": "https://github.com/dfrankland/amphtml-validator-rules#readme",
+  "dependencies": {},
   "devDependencies": {
     "jest": "^22.0.4"
   }
