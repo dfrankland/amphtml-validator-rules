@@ -1,7 +1,7 @@
 {
   "name": "amphtml-validator-rules",
   "description": "Get all the rules that the `amphtml-validator` uses.",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "./dist/index.js",
   "scripts": {
     "build": "docker-compose up --build",
