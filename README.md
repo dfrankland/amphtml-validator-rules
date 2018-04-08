@@ -72,4 +72,4 @@ Prints the following:
 
 To build `amphtml-validator-rules` Docker and Docker Compose are needed because
 the validation rules require Python and Protobuf to compile. Once, those are
-installed, build by running `npm run build` or `docker-compose up --build`.
+installed, build by running `npm run prepublishOnly`.

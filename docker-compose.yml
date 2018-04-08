@@ -2,6 +2,9 @@ version: '3'
 
 services:
   jessie:
-    build: .
+    build:
+      context: .
+      args:
+        - VERSION
     volumes:
-      - ./dist:/build/amphtml/validator/dist-remote
+      - ./:/build/amphtml/validator/hostdir

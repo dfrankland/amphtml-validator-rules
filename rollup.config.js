@@ -1,12 +1,12 @@
-import { promisify } from 'util';
-import { readFile } from 'fs';
-import { resolve as resolvePath } from 'path';
-
 export default {
-  input: './dist/validator-generated.js',
+  context: 'global',
+  input: './generated/validator_minified.js',
   output: {
-    file: './dist-remote/index.js',
+    file: './dist/index.js',
     format: 'cjs',
+    outro: `
+      module.exports.amp = amp;
+      module.exports.version = '${process.env.VERSION}';
+    `,
   },
-  intro: promisify(readFile)(resolvePath(__dirname, './goog.provide.js')),
 };
