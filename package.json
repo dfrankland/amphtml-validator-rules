@@ -1,7 +1,7 @@
 {
   "name": "amphtml-validator-rules",
   "description": "Get all the rules that the `amphtml-validator` uses.",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "main": "./dist/index.js",
   "files": [
     "dist/index.js"
