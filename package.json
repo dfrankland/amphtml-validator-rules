@@ -7,10 +7,10 @@
     "dist/index.js"
   ],
   "scripts": {
-    "generate": "env-cmd ./.env docker-compose up --build",
-    "build": "env-cmd ./.env rollup -c",
+    "generate": "env-cmd -f ./.env docker-compose up --build",
+    "build": "env-cmd -f ./.env rollup -c",
     "prepublishOnly": "npm run generate && npm run build",
-    "test": "env-cmd ./.env jest"
+    "test": "env-cmd -f ./.env jest"
   },
   "repository": {
     "type": "git",
@@ -31,8 +31,8 @@
   "homepage": "https://github.com/dfrankland/amphtml-validator-rules#readme",
   "dependencies": {},
   "devDependencies": {
-    "env-cmd": "^7.0.0",
-    "jest": "^22.4.3",
-    "rollup": "^0.57.1"
+    "env-cmd": "^9.0.2",
+    "jest": "^24.8.0",
+    "rollup": "^1.13.1"
   }
 }
