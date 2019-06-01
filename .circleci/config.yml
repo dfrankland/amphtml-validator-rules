@@ -1,7 +1,8 @@
 version: 2
 jobs:
   build:
-    machine: true
+    docker:
+      - image: circleci/node:10.16.0
     working_directory: ~/amphtml-validator-rules
     steps:
       - checkout
@@ -14,6 +15,7 @@ jobs:
       - run:
           name: Install Dependencies
           command: npm install
+      - setup_remote_docker
       - run:
           name: Generate Rules
           command: npm run generate
