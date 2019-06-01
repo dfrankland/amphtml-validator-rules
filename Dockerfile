@@ -1,39 +1,30 @@
-FROM debian:jessie
+FROM debian:stretch
 
-ARG VERSION
+ARG VERSION=""
 
 # Install all the dependencies for `amphtml-validator` to build
 RUN \
-  apt-get update \
-  && \
+  set -e; \
+  apt-get update; \
   apt-get install -y \
-    curl \
-  && \
-  curl -sL https://deb.nodesource.com/setup_8.x | bash - \
-  && \
-  apt-get update \
-  && \
+    curl; \
+  curl -sL https://deb.nodesource.com/setup_10.x | bash -; \
+  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -; \
+  echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list; \
+  apt-get update; \
   apt-get install -y \
     git \
     nodejs \
-    openjdk-7-jre \
+    yarn \
+    openjdk-8-jre \
     protobuf-compiler \
     python-protobuf \
-    python2.7
+    python2.7; \
+  yarn global add gulp-cli; \
+  mkdir -p /build; \
+  cd /build; \
+  curl -sL https://github.com/ampproject/amphtml/archive/$VERSION.tar.gz | gunzip | tar -xv;
 
-# Explicity checkout `amphtml` at a specific revision (that way we don't have to
-# guess which rules are published).
-RUN \
-  mkdir -p /build \
-  && \
-  cd /build \
-  && \
-  git clone https://github.com/ampproject/amphtml.git \
-  && \
-  cd ./amphtml \
-  && \
-  git checkout tags/$VERSION
-
-WORKDIR /build/amphtml/validator
+WORKDIR /build/amphtml-$VERSION/validator
 
 CMD ["sh", "-c", "python ./build.py && rm -rf ./hostdir/generated && mkdir -p ./hostdir/generated && cp ./dist/* ./hostdir/generated/"]
