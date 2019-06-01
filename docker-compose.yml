@@ -1,10 +1,10 @@
 version: '3'
 
 services:
-  jessie:
+  stretch:
     build:
       context: .
       args:
         - VERSION
     volumes:
-      - ./:/build/amphtml/validator/hostdir
+      - ./:/build/amphtml-$VERSION/validator/hostdir
