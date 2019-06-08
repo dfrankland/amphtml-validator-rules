@@ -59,4 +59,4 @@ typings/
 
 # Distributable files
 /dist
-/generated
+amphtml-validator-rules.json

@@ -28,4 +28,4 @@ RUN \
 
 WORKDIR /build/amphtml-$VERSION/validator
 
-CMD ["sh", "-c", "python ./build.py && rm -rf ./hostdir/generated && mkdir -p ./hostdir/generated && cp ./dist/* ./hostdir/generated/"]
+CMD ["sh", "-c", "python ./build.py 1>/dev/null 2>/dev/null && cat ./dist/validator-generated.json"]

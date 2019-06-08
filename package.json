@@ -9,11 +9,11 @@
     "dist/index.d.ts"
   ],
   "scripts": {
-    "generate": "env-cmd -f ./.env docker-compose up --build",
+    "generate": "env-cmd -f ./.env --use-shell 'docker build --build-arg VERSION=$VERSION -t amphtml-validator-rules .' && docker run -it amphtml-validator-rules | cat - > amphtml-validator-rules.json",
     "build": "env-cmd -f ./.env rollup -c",
     "prepublishOnly": "npm run generate && npm run build",
     "test": "env-cmd -f ./.env jest",
-    "quicktype": "quicktype --just-types -l typescript -o ./dist/index.d.ts ./generated/validator-generated.json"
+    "quicktype": "quicktype --just-types -l typescript -o ./dist/index.d.ts ./amphtml-validator-rules.json"
   },
   "repository": {
     "type": "git",

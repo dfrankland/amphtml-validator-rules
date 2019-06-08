@@ -1,10 +1,10 @@
 import json from 'rollup-plugin-json';
 import { exec } from 'child_process';
 import { appendFile } from 'fs';
-import validatorGenerated from './generated/validator-generated.json';
+import validatorGenerated from './amphtml-validator-rules.json';
 
 export default {
-  input: './generated/validator-generated.json',
+  input: './amphtml-validator-rules.json',
   output: {
     file: './dist/index.js',
     format: 'cjs',
