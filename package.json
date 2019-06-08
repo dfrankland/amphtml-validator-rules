@@ -11,8 +11,9 @@
   "scripts": {
     "pregenerate": "env-cmd -f ./.env --use-shell 'docker build --build-arg VERSION=$VERSION -t amphtml-validator-rules .'",
     "generate": "docker run -it amphtml-validator-rules | cat - > amphtml-validator-rules.json",
+    "postgenerate": "npm run build",
     "build": "env-cmd -f ./.env rollup -c",
-    "prepublishOnly": "npm run generate && npm run build",
+    "prepublishOnly": "npm run generate",
     "test": "env-cmd -f ./.env jest",
     "quicktype": "quicktype --just-types -l typescript -o ./dist/index.d.ts ./amphtml-validator-rules.json"
   },
