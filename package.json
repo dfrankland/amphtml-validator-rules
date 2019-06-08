@@ -3,14 +3,17 @@
   "description": "Get all the rules that the `amphtml-validator` uses.",
   "version": "2.0.0",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
-    "dist/index.js"
+    "dist/index.js",
+    "dist/index.d.ts"
   ],
   "scripts": {
     "generate": "env-cmd -f ./.env docker-compose up --build",
     "build": "env-cmd -f ./.env rollup -c",
     "prepublishOnly": "npm run generate && npm run build",
-    "test": "env-cmd -f ./.env jest"
+    "test": "env-cmd -f ./.env jest",
+    "quicktype": "quicktype --just-types -l typescript -o ./dist/index.d.ts ./generated/validator-generated.json"
   },
   "repository": {
     "type": "git",
@@ -33,6 +36,8 @@
   "devDependencies": {
     "env-cmd": "^9.0.2",
     "jest": "^24.8.0",
-    "rollup": "^1.13.1"
+    "quicktype": "^15.0.194",
+    "rollup": "^1.13.1",
+    "rollup-plugin-json": "^4.0.0"
   }
 }
