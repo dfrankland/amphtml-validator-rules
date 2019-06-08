@@ -18,8 +18,9 @@ RUN \
     yarn \
     openjdk-8-jre \
     protobuf-compiler \
-    python-protobuf \
-    python2.7; \
+    python2.7 \
+    python-pip; \
+  pip install --user protobuf; \
   yarn global add gulp-cli; \
   mkdir -p /build; \
   cd /build; \
