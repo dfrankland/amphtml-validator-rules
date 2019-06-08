@@ -13,19 +13,10 @@ Makes it convenient for other libraries that are built on top of
 [amphtml]: https://github.com/ampproject/amphtml
 [react-amphtml]: https://github.com/dfrankland/react-amphtml
 
-## Use
-
-There are quite a few objects and functions exported, most of which do not seem
-to do much on their own. More than likely one is to only be concerned with the
-`amp.validator.createRules` function which returns an object with all the
-[AMPHTML][amphtml] components.
-
-Example:
+## Example
 
 ```js
-const amphtmlValidatorRules = require('amphtml-validator-rules');
-
-const { tags } = amphtmlValidatorRules.amp.validator.createRules();
+const { tags } = require('amphtml-validator-rules');
 
 console.log((
   tags.filter(({ tagName }) => tagName.toLowerCase() === 'template')
