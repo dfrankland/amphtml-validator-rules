@@ -36,7 +36,7 @@
   "homepage": "https://github.com/dfrankland/amphtml-validator-rules#readme",
   "dependencies": {},
   "devDependencies": {
-    "env-cmd": "^9.0.2",
+    "env-cmd": "^10.1.0",
     "jest": "^24.8.0",
     "quicktype": "^15.0.194",
     "rollup": "^1.13.1",
