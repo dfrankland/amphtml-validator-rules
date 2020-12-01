@@ -37,7 +37,7 @@
   "dependencies": {},
   "devDependencies": {
     "env-cmd": "^9.0.2",
-    "jest": "^24.8.0",
+    "jest": "^26.6.3",
     "quicktype": "^15.0.194",
     "rollup": "^1.13.1",
     "rollup-plugin-json": "^4.0.0"
